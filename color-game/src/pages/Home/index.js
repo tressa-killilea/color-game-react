@@ -29,7 +29,7 @@ function Home(){
                 <ColorBlock color={guess_color}></ColorBlock>
             </div>
             <div className="sliders">
-                <Slider></Slider>
+                <Slider color="red"></Slider>
             </div>
         </div>
     );

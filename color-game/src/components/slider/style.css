@@ -1,11 +1,10 @@
 .cust_slider{
-    max-width: 300px;
+    width: 300px;
     margin: auto;
-    background-color: pink;
 }
-.cust_slider_track{
+.cust_slider-track{
     top: 8px;
-    height: 4px;
+    height: 8px;
     background: #bababa;
 }
 .cust_slider-track.cust_slider-track-0{
@@ -20,3 +19,17 @@
     border-radius: 100%;
     outline: none;
   }
+
+.slider_wrapper{
+    display: flex;
+    gap: 12px;
+    background-color: gray;
+    align-items: center;
+}
+.color_name{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 900;
+}
