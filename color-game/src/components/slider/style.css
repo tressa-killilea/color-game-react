@@ -1,0 +1,22 @@
+.cust_slider{
+    max-width: 300px;
+    margin: auto;
+    background-color: pink;
+}
+.cust_slider_track{
+    top: 8px;
+    height: 4px;
+    background: #bababa;
+}
+.cust_slider-track.cust_slider-track-0{
+    background: #645265;
+}
+
+.cust_slider-thumb {
+    cursor: pointer;
+    background: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    outline: none;
+  }
