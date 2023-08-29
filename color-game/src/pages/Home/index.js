@@ -22,8 +22,13 @@ class Home extends React.Component{
         guess_color: [0,0,0]
     }
 
-    handleCallback = (data) => {
-        this.setState({name: data})
+    handleCallback = (val, color) => {
+        var tempColor = this.state.guess_color;
+        if(color === "red") {tempColor[0] = val;}
+        else if (color === "green") {tempColor[1]= val;}
+        else if (color === "blue") {tempColor[2] = val;}
+        
+        this.setState({guess_color: tempColor})
     }
 
     render() {

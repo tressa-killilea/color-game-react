@@ -9,7 +9,7 @@ class Slider extends React.Component{
     }
 
     onTrigger = (event) => {
-        this.props.callback(event);
+        this.props.callback(event, this.props.color);
     }
 
     onSliderChange(val){
