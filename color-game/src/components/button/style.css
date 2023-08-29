@@ -1,0 +1,29 @@
+.tk_button {
+  background-image: linear-gradient(92deg, #0c7547 15%, #0e5c3a 60%, #0d422b);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;;
+  height: 50px;
+  padding: 0 20px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+
+}
+
+.tk_button:hover {
+  box-shadow: rgba(14, 92, 58, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .tk_button {
+    padding: 0 40px;
+  }
+}
