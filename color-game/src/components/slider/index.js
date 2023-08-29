@@ -14,7 +14,7 @@ class Slider extends React.Component{
 
     onSliderChange(val){
         this.setState({value: val});
-        this.onTrigger(val);
+        this.onTrigger(val);   
     }
 
     render(){
@@ -42,6 +42,7 @@ class Slider extends React.Component{
                     min={0}
                     max={255}
                     defaultValue={0}
+                    disabled={this.props.disabled}
                     />
                 <div className="color_value">{this.state.value}</div>
             </div>

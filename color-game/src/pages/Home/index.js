@@ -2,6 +2,7 @@ import React from "react";
 import ColorBlock from "../../components/color-block";
 import Slider from "../../components/slider";
 import Button from "../../components/button";
+import Result from "../../components/results";
 import './style.css';
 
 function generateColor(){
@@ -20,7 +21,8 @@ var key_color = generateColor();
 
 class Home extends React.Component{
     state={
-        guess_color: [0,0,0]
+        guess_color: [0,0,0],
+        isFinished: false
     }
 
     handleCallback = (val, color) => {
@@ -33,7 +35,7 @@ class Home extends React.Component{
     }
 
     onFinishClick = () => {
-        console.log("FINISH");
+        this.setState({isFinished: true});
     }
 
     render() {
@@ -49,13 +51,16 @@ class Home extends React.Component{
                         <ColorBlock color={this.state.guess_color}></ColorBlock>
                     </div>
                     <div className="sliders">
-                        <Slider color="red" callback={this.handleCallback}></Slider>
-                        <Slider color="green" callback={this.handleCallback}></Slider>
-                        <Slider color="blue" callback={this.handleCallback}></Slider>
+                        <Slider color="red" callback={this.handleCallback} disabled={this.state.isFinished}></Slider>
+                        <Slider color="green" callback={this.handleCallback} disabled={this.state.isFinished}></Slider>
+                        <Slider color="blue" callback={this.handleCallback} disabled={this.state.isFinished}></Slider>
                     </div>
-                </div>
+                </div>          
                 <div className="btn">
                     <Button text="Finish" onClick={this.onFinishClick}></Button>
+                </div>
+                <div>
+                    {this.state.isFinished && <Result goal={key_color} guess={this.state.guess_color}></Result>}
                 </div>
             </div>
         );
