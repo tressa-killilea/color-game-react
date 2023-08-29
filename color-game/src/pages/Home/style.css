@@ -1,5 +1,12 @@
 .wrapper{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin: 10px;
+}
+
+.sliders{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
 }

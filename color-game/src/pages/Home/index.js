@@ -1,3 +1,4 @@
+import React from "react";
 import ColorBlock from "../../components/color-block";
 import Slider from "../../components/slider";
 import './style.css';
@@ -15,24 +16,35 @@ function getRandomNum(){
 }
 
 var key_color = generateColor();
-var guess_color = [0, 0, 0];
 
-function Home(){
-    return(
-        <div className="wrapper">
-            <div className="key_wrapper">
-                <h4>Goal</h4>
-                <ColorBlock color={key_color}></ColorBlock>
+class Home extends React.Component{
+    state={
+        guess_color: [0,0,0]
+    }
+
+    handleCallback = (data) => {
+        this.setState({name: data})
+    }
+
+    render() {
+        return(
+            <div className="wrapper">
+                <div className="key_wrapper">
+                    <h4>Goal</h4>
+                    <ColorBlock color={key_color}></ColorBlock>
+                </div>
+                <div className="guess_wrapper">
+                    <h4>Guess</h4>
+                    <ColorBlock color={this.state.guess_color}></ColorBlock>
+                </div>
+                <div className="sliders">
+                    <Slider color="red" callback={this.handleCallback}></Slider>
+                    <Slider color="green" callback={this.handleCallback}></Slider>
+                    <Slider color="blue" callback={this.handleCallback}></Slider>
+                </div>
             </div>
-            <div className="guess_wrapper">
-                <h4>Guess</h4>
-                <ColorBlock color={guess_color}></ColorBlock>
-            </div>
-            <div className="sliders">
-                <Slider color="red"></Slider>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Home;

@@ -1,10 +1,10 @@
 .cust_slider{
-    width: 300px;
+    width: 250px;
     margin: auto;
 }
 .cust_slider-track{
-    top: 8px;
-    height: 8px;
+    top: 4px;
+    height: 6px;
     background: #bababa;
 }
 .cust_slider-track.cust_slider-track-0{
@@ -14,8 +14,8 @@
 .cust_slider-thumb {
     cursor: pointer;
     background: black;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 100%;
     outline: none;
   }
@@ -23,7 +23,6 @@
 .slider_wrapper{
     display: flex;
     gap: 12px;
-    background-color: gray;
     align-items: center;
 }
 .color_name{
@@ -32,4 +31,10 @@
     border-radius: 10px;
     font-size: 30px;
     font-weight: 900;
+    margin-top: 10px;
+}
+
+.color_value{
+    margin-top: 10px;
+    width: 30px;
 }
