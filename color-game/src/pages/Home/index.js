@@ -17,11 +17,10 @@ function getRandomNum(){
     return Math.floor(Math.random() * 255);
 }
 
-var key_color = generateColor();
-
 class Home extends React.Component{
     state={
         guess_color: [0,0,0],
+        key_color: generateColor(),
         isFinished: false
     }
 
@@ -38,13 +37,18 @@ class Home extends React.Component{
         this.setState({isFinished: true});
     }
 
+    playAgain = () => {
+        this.setState({key_color: generateColor()});
+        this.setState({isFinished: false});
+    }
+
     render() {
         return(
             <div>
                 <div className="game_wrapper">
                     <div className="key_wrapper">
                         <h4>Goal</h4>
-                        <ColorBlock color={key_color}></ColorBlock>
+                        <ColorBlock color={this.state.key_color}></ColorBlock>
                     </div>
                     <div className="guess_wrapper">
                         <h4>Guess</h4>
@@ -56,11 +60,14 @@ class Home extends React.Component{
                         <Slider color="blue" callback={this.handleCallback} disabled={this.state.isFinished}></Slider>
                     </div>
                 </div>          
-                <div className="btn">
+                {!this.state.isFinished && <div className="btn">
                     <Button text="Finish" onClick={this.onFinishClick}></Button>
-                </div>
+                </div>}
+                {this.state.isFinished && <div className="btn">
+                    <Button text="Play Again" onClick={this.playAgain}></Button>
+                </div>}
                 <div>
-                    {this.state.isFinished && <Result goal={key_color} guess={this.state.guess_color}></Result>}
+                    {this.state.isFinished && <Result goal={this.state.key_color} guess={this.state.guess_color}></Result>}
                 </div>
             </div>
         );
