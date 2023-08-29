@@ -9,3 +9,5 @@ Randomly generates a color that the user must recreate with RGB color sliders.
 - [ ] Show results
 - [ ] Unit tests
 - [ ] Make it look cool
+- [ ] Play again button
+- [ ] Page w/ high scores

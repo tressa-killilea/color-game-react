@@ -9,13 +9,12 @@ class Slider extends React.Component{
     }
 
     onTrigger = (event) => {
-        this.props.callback(event.target.value);
-        event.preventDefault();
+        this.props.callback(event);
     }
-    
+
     onSliderChange(val){
         this.setState({value: val});
-        this.onTrigger();
+        this.onTrigger(val);
     }
 
     render(){
