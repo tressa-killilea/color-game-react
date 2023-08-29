@@ -12,3 +12,4 @@ Randomly generates a color that the user must recreate with RGB color sliders.
 - [x] Play again button
 - [ ] Page w/ high scores
 - [ ] Add slide animation to guess block so that it overlaps the goal block after Finish btn is clicked
+- [ ] Refactor colors from array of numbers to object with RGB fields
